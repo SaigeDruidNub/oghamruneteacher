@@ -1,26 +1,48 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Ogham & Rune Teacher Palette - Light Mode */
+  --background: #07292E;
+  --foreground: #3DB0D7;
+  --primary: #3DB0D7;
+  --secondary: #13648A;
+  --accent: #43807E;
+  --muted: #0E4342;
+  --card: #ffffff;
+  --card-foreground: #07292E;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* Removed invalid @theme rule */
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Ogham & Rune Teacher Palette - Dark Mode */
+    --background: #030118;
+    --foreground: #3DB0D7;
+    --primary: #3DB0D7;
+    --secondary: #1D013C;
+    --accent: #13648A;
+    --muted: #0E4342;
+    --card: #1D013C;
+    --card-foreground: #3DB0D7;
   }
-}
+/* Removed extra closing brace */
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Example utility classes for palette usage */
+.bg-primary { background: var(--primary); }
+.bg-secondary { background: var(--secondary); }
+.bg-accent { background: var(--accent); }
+.bg-muted { background: var(--muted); }
+.bg-card { background: var(--card); }
+.text-primary { color: var(--primary); }
+.text-secondary { color: var(--secondary); }
+.text-accent { color: var(--accent); }
+.text-muted { color: var(--muted); }
+.text-card { color: var(--card-foreground); }
 }
