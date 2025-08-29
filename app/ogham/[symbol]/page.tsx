@@ -50,58 +50,74 @@ const oghamDetails = {
     n: {
         tree: "Ash",
         keyWord: "Key",
-        name: "Ogham name: Nion (say \"neen\")",
-        poem: "With the power of the key, \nUnlock the mysteries within thee.",
-        about: "I am Ash, the tree of knowledge and insight. My tall and slender form reaches for the sky, while my roots dig deep into the earth. I am a symbol of wisdom and understanding, reminding you to seek the truth and embrace your inner strength. My wood is used for making tools and weapons, carrying the spirit of the forest with it.",
-        medicine: "My bark has been used in traditional medicine to treat fevers and inflammation. Infusions made from my leaves can help with digestive issues, and my wood is often used for making charcoal.",
+        name: "Ogham name: Nuin (say \"noo-in\")",
+        poem: "Your imagination is the key to creation.",
+        about: "I am the Ash, the tree of life, with deep roots in the underworld and branches in the starry realms. I stand strong and tall with delicate leaves casting dappled light. In winter my black buds are like tiny deer hooves reaching to the sky. My seeds are called keys and hang in bunches. I hold the key to the gifts within, like seeds that lie dormant, waiting for the right conditions to grow. You too have gifts within you waiting to be unlocked. When you connect your inner world together with the world around you, you can create amazing things. As a human you have a special ability to bring what you imagine into the world. Connection is the key.",
+        medicine: "Medicine from my leaves made into tea helps fevers and can help when the joints are painful and swollen. I offer a tonic for long life, health and wellbeing.",
     },
     h: {
         tree: "Hawthorn",
         keyWord: "Heart",
-        description: "Hawthorn is known for its beautiful flowers and is associated with love and protection...",
-        history: "The blossoms of the Hawthorn were used in ancient rituals to symbolize hope and new beginnings...",
+        name: "Ogham name: Huathe (say \"hooah\")",
+        poem: "Love is at the heart of life, \nEven in times of thorns and strife.",
+        about: "I am Hawthorn, tree of the heart. I grow on mountain and moor, forest, hedgerow and shore, throughout the heart of our land. Fresh green in spring, I feed many caterpillars and in May my white blossom hums with bees. In autumn my red berries shine, faery apples, a feast for the birds and medicine for the heart. I am Whitethorn, the faery tree, a magical tree to be respected. I herald the celebration of Beltane, festival of bright fire when you decorate maypoles with my boughs and we dance together celebrating life and love. I have sharp thorns and tangled branches, creating a sanctuary for small birds, protecting them from hunting hawks. Sometimes a thorny situation requires our hearts to grow stronger and wiser, to remember that love is alwyas at the heart of life.",
+        medicine: "Medicine from my flowers is a calming tea and can help with sleep. The pulp of my berries can draw out splinters. My berries are a spceial medicine for strengthening and protecting your heart.",
     },
     d: {
         tree: "Oak",
         keyWord: "Strength",
-        description: "Oak trees are symbols of strength and endurance, often living for hundreds of years...",
-        history: "The Oak was sacred to the Druids and was believed to be a source of wisdom and power...",
+        name: "Ogham name: Duir (say \"dare\")",
+        poem: "Be deeply rooted, \nAnd strong of heart.",
+        about: "I am Oak, the tree of strength. As King of the forest, I shelter and support many species, from tiny insects, mosses and mushrooms, to many birds and mammals who are fed by my acorns. As a true sovereign, I take care of those in my realm. Growing slowly and steadily for up to a thousand years, my deep roots and strong heartwood enable me to stand through many trials and storms. I am a guardian of the land and my name, Duir, is the origin of the word door. My wood is used to make doors for buildings and i am also a doorway to the sky world. I may court a lightning strike, drawing the power of the heavens down into the earth. With deep roots and a strong heart you will stand through all weathers.",
+        medicine: "Medicine from my bark, leaves and acorns helps to heal wounds, sore throat, gums and diarrhea. Acorns strengthen your heart, bones and teeth.",
     },
     t: {
         tree: "Holly",
         keyWord: "Protection",
-        description: "Holly is known for its red berries and sharp leaves, symbolizing protection and defense...",
-        history: "Holly was used in ancient rituals to protect against evil spirits and was a symbol of eternal life...",
+        name: "Ogham name: Tinne (say \"tinna\")",
+        poem: "Bright protection to keep you from harm, \nSafe sanctuary beneath my arms.",
+        about: "I am Holly, tree of protection, evergreen throughout the turning year. My name Holly comes from the word 'holy' - I am a tree of everlasting life and divine love. I am a guardian of this land, sheltering animals beneath my canopy, giving shade in hot sun, safe sanctuary in storms and protection from lightning. My white four-petalled flowers are honey-scented, nectar for insects in summer months. My scarlet berries feed birds through the winder cold. I protect myself from browsing animals with spiky leaves, but look up through my boughs and you'll see that my high-up leaves are not so spiked - I do not have thorns where they are not needed. Sometimes we need thorns to protect ourselves or others. Sometimes we can trust that all is well. I offer you my bright protection and safe sanctuary.",
+        medicine: "Medicine from my leaves can help to heal coughs and fever. Holly berries are poisonous. The leaves should be used only in small quantities, as tea, under adult supervision.",
     },
     c: {
         tree: "Hazel",
         keyWord: "Intuition",
-        description: "Hazel trees are associated with wisdom, intuition, and knowledge...",
-        history: "In ancient mythology, Hazel nuts were eaten by scholars to enhance wisdom and knowledge...",
+        name: "Ogham name: Coll (say \"col\")",
+        poem: "Crack the shell and you will find, \nThe kernel of wisdom within you lies.",
+        about: "I am Hazel, the tree of wisdom and inner knowing. With my silver-brown stems and rich leafy branches, I am home for many nesting birds and other creatures. Growing as the understory in the forest family, I live in community, providing a feast of hazelnuts for all in the autumn. With my roots in the dark earth, I know where underground streams flow and where seams of metal and crystals are in the earth, deep below. My branches touch the sky and know the secrets of the stars. Druids walked among my groves and ate my hazelnuts to bring them wisdom and inspiration. Each hazelnut is filled with wisdom of the Universe. Trust your intuition - the way you know things without knowing how.",
+        medicine: "Medicine from my leaves helps to heal bruises. Other medicines within me are being rediscovered for more serious illness.",
     },
     q: {
         tree: "Apple",
         keyWord: "Generosity",
-        description: "Apple trees are symbols of generosity and abundance, often bearing fruit in abundance...",
-        history: "The Apple was considered a sacred fruit in many ancient cultures, symbolizing immortality and knowledge...",
+        name: "Ogham name: Quert (say \"kwairt\")",
+        poem: "Tend your health with love and care, \nAnd goodness with your loved ones share.",
+        about: "I am Apple, the tree of health and love. In spring my pink-white blossom gives golden nectar for bees. In autumn I offer plentiful fruits for all to share. I give generously with loved ones, that way the gift is passed on to others. In the forest I grow as Crab or Wild Apple, with small, bright green fruits on thorny branches. My fruit is an abundant health-giving food for many animals, important to your ancestors, and sacred to the Druids. Inside each apple is a hidden star filled with seeds, reminding you how to see the hidden treasure in yourself and others.",
+        medicine: "Medicine Apples help to cleanse the body and are helpful for soothing tummy aches and strengthening your heart. Make delicious tea from fresh, chopped apples. Crushed pulp can be used for healing woulds and burns. My flower essence is for those who find it hard to love themselves.",
     },
     m: {
         tree: "Bramble",
         keyWord: "Harvest",
-        description: "Bramble, or blackberry, is associated with the harvest and the changing seasons...",
-        history: "The Bramble was often used in ancient rituals to celebrate the harvest and to offer thanks to the earth...",
+        name: "Ogham name: Muin (say \"moo-in\")",
+        poem: "Celebrating work well done, \nMerry making, \nHarvest sun.",
+        about: "I am Bramble, rambling wild, growing in forests and fields, hedgerows and edges. Come celebrate the harvest and feast on my blackberries. See how I grow, weaving my thorny tendrils throughout the land. I am a protector of nature; my thickets are a safe haven for tree saplings, protecting them from browsing animals. Small mammals, birds and insects live in the sanctuary of my thorny thickets. My blossom is savoured by bees. I share my berries with one and all. The children of all species have special gifts to share in the family of nature. Celebrate my gifts, your own gifts and those of others. It is time for merry-making, sharing the fruits of your harvest, work well done!",
+        medicine: "Medicine from my Bramble flowers and leaves is a wonderful first aid to heal a cut or bleeding wound, especially those given by my thorns. Simply chew and apply. Tea from my leaves is excellent for diarrhea. Eating my berries helps protect you from illnesses of colder months.",
     },
     g: {
         tree: "Ivy",
         keyWord: "Flow",
-        description: "Ivy is a symbol of fidelity, eternity, and strong affectionate attachment...",
-        history: "Ivy was used in ancient wedding ceremonies to symbolize eternal love and fidelity...",
+        name: "Ogham name: Gort (say \"gort\")",
+        poem: "Find your way by learning to flow, \nThe world will support you and help you grow.",
+        about: "I am Ivy, the weaver, growing up and down, over walls, along the forest floor and climbing trees to touch the sky. My Gaelic name is Eidhion meaning 'clothoes of a tree'. I flow through the world and need support to grow. In return I support many other lives. My golden flowers in late autumn are the last flowers of the year to give nectar for the insects. In the winter months I offer safe haven for sheltering birds, nestling them in my evergreen cloak and feeding them my berries through the coldest times. I grow freely, and flow like water, adapting to the world as I go. Let the Earth hold you. Learn to flow, to be supported and to support life in return, as you grow.",
+        medicine: "Medicine from my leaves can help heal coughs and is strong so should be used very carefully by herbalists. My leaves are cooling and help to heal burns. Make a soothing footbath with my leaves after a long walk.",
     },
     ng: {
         tree: "Fern",
         keyWord: "Invisibility",
-        description: "Ferns are ancient plants that often symbolize sincerity and magic...",
-        history: "In ancient times, ferns were believed to be magical plants that could render one invisible...",
+        name: "Ogham name: Ngetal (say \"nie-etal\")",
+        poem: "Return to your essence, the stillness inside, \nDeep in the forest, within me hide.",
+        about: "I am Fern, of an ancient race that once grew as tall as trees when dinosaurs roamed these lands. We grow in the sunlit forest glades and along the mossy branches of great Oaks. As Bracken, I grow freely and oftehn clothe the mountainsides and moors. See me unfurl in spirals of golden-green from the earth in springtime. I cast dappled light and feathered shadows, a place for animals to hide. Your ancestors knew secrets of invisibility and used my leaves as camouflage. Quiet your mind and become the forest, listen to the life around you, smell the rich soil, be still and blend in. You are one with the Earth.",
+        medicine: "",
     },
     z: {
         tree: "Blackthorn",
@@ -159,8 +175,9 @@ export default function SymbolInfoPage() {
     const details = oghamDetails[symbol as keyof typeof oghamDetails];
 
     return (
-        <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", background: "var(<--background)", color: "var(--foreground)" }}>
+        <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", background: "var(--background)", color: "var(--foreground)" }}>
             <div style={{ background: "var(--card)", color: "var(--card-foreground)", borderRadius: "1.5rem", boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)", padding: "2rem", maxWidth: "28rem", width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
+                <a href="/ogham" style={{ alignSelf: "flex-start", marginBottom: "1rem", color: "var(--primary)", textDecoration: "underline", fontWeight: 500, fontSize: "1rem" }}>&larr; Back to Ogham Landing Page</a>
                 <h1 style={{ fontSize: "2rem", fontWeight: 800, marginBottom: "1rem", color: "var(--primary)", textAlign: "center" }}>{symbol.toUpperCase()}</h1>
                 <Image src={`/${symbol}.png`} alt={symbol} width={96} height={96} style={{ borderRadius: "0.5rem", boxShadow: "0 2px 8px 0 rgba(61, 176, 215, 0.15)", background: "var(--card)", opacity: 0.95, marginBottom: "1.5rem" }} />
                 <div style={{ fontWeight: 600, color: "var(--primary)", fontSize: "1.1rem", marginBottom: "0.5rem" }}>Tree: {details.tree}</div>
