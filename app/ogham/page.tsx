@@ -51,6 +51,7 @@ export default function OghamLanding() {
 					alignItems: "center",
 				}}
 			>
+				<a href="/" style={{ alignSelf: "flex-start", marginBottom: "1rem", color: "var(--primary)", textDecoration: "underline", fontWeight: 500, fontSize: "1rem" }}>&larr; Back to Home</a>
 				<h1
 					style={{
 						fontSize: "2.5rem",

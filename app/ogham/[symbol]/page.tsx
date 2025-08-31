@@ -122,44 +122,58 @@ const oghamDetails = {
     z: {
         tree: "Blackthorn",
         keyWord: "Challenge",
-        description: "Blackthorn is associated with challenge and protection, often used to make walking sticks...",
-        history: "The Blackthorn was used in ancient rituals to protect against evil and to challenge adversaries...",
+        name: "Ogham name: Straif (say \"strahf\")",
+        poem: "Rise to the challenge and you will find, \nHidden treasure of many kinds.",
+        about: "I am Blackthorn, hardy and strong. I grow in the forest edges and hedgerows, holding the boundaries with my thorny presence. I am Grandmother Blackthorn and I demand respect. My thorns are fierce and can cause you harm. Take care! In early spring my white blossoms appear like snow against my black wood, first tree-nectar for walking bees. In autumn I bear purple sloe berries enjoyed by many birds and animals. Sloes are sharp and sour but there is a gift of hidden sweetness for you. I can show you how to meet life's challenges with strength. How to hold boundaries and protect yourself and others with fierceness. How to find the hidden treasure in all situations, in others and in ourselves.",
+        medicine: "Medicine is given from my flowers which can be made into tea to help tummy ache. Tea from my leaves soothes sore throats and , when cooled, heals eyes. Sloe berries make syrup and teas for colds and coughs.",
     },
     r: {
         tree: "Elder",
         keyWord: "Wisdom",
-        description: "Elder trees are associated with wisdom, protection, and healing...",
-        history: "The Elder was considered a sacred tree in ancient cultures, often associated with the goddess and with healing...",
+        name: "Ogham name: Ruis (say \"roo-ish\")",
+        poem: "Wisdom is a rare medicine, \nTo be treasured.",
+        about: "I am Elder, the wise woman. My tree is a medicine chest. In leaf, blossom and berry, I see what you need to guide your return to health. My blossoms offer nectar for insects. My berries fill the bellies of migrating birds and other animals giving strength for their journeys and the winter ahead. I am the way finder, the path clearer. My music and medicine clears stuck energy, opens your breath and clears your sight. I share my medicine and in return ask to be harvested with care and respect. The pathway to wisdom is rarely a straight one. Remember to honour your elders who have earned wisdom through their long winding journeys and many experiences.",
+        medicine: "Medicine from my leaves helps with the healing of bruises and sprains, burns and pains. In summer the smell of my crushed leaves helps to keep insects away. My blossoms, used as a cold compress, can help heal wounds, burns and sore eyes. Drink my blossom as tea for fever, sunstroke and hay fever. My berries as syrups and tea give strength and protection from coughs, colds and flu.",
     },
     a: {
         tree: "Pine",
         keyWord: "Spirit",
-        description: "Pine trees are symbols of immortality and are often associated with spiritual enlightenment...",
-        history: "The Pine was sacred to many ancient cultures and was often used in spiritual rituals and ceremonies...",
+        name: "Ogham name: Ailm (say \"arim\")",
+        poem: "Take a breath, see from on high, \nThat all is well beneath the sky.",
+        about: "I am the Pine, tree of Divine Light and Spirit. I brush the sky clean with my evergreen needles. As I breathe, I share special particles called pinene to gift you health and clean the atmosphere. My forests have always been held as sacred places by the people. At midwinter Druids light fires of my wood to celebrate the return of the light and today you gather together round the Christmas tree to celebrate this holy time. Visit my tall trees and look up into my high branches. Imagine how the world looks from my treetop. Imagine how it looks from the sky where eagles fly. From high up, where the air is fresh and we can see for miles around, we may see that some things that seemed important are in fact tiny. From the heavens we can see er are all connected.",
+        medicine: "Medicine from my pine needles made into tea is rich in vitamin C and helps to heal a cough and cold and protect your from illness. My pollen is a powerful medicine to five energy and health. My sap can be made into an ointment to draw out splinters and heal wounds.",
     },
     o: {
         tree: "Gorse",
         keyWord: "Hope",
-        description: "Gorse is a hardy shrub that symbolizes hope and resilience...",
-        history: "The bright yellow flowers of the Gorse were seen as a symbol of hope and were used in ancient rituals to celebrate the sun...",
+        name: "Ogham name: Onn (say \"orn\")",
+        poem: "Even in the winter's night or when the clouds are grey, \nThe golden sun is shining for you, never far away.",
+        about: "I am Gorseor Furze, with flowers shining gold in all seasons. I am a hardy plant. I grow on open heaths and moorland, in winter wind and snow or blazing summer sun and, like a phoenix, I return anew after scorching fires. My spiky bushes are a safe haven for birds and animals and I feed the soil with nitrogen to help other plants to ggrow. I am loved by the elementals and the insects who enjoy my sweet nectar. I am treasure, the true gold of the land. Even in the heart of the winter, when all is cold and grey, my flowers bloom, reminding you that light and hope are never far away.",
+        medicine: "Medicine from my flower essence helps those who have given up hope and are full of despair, helping the return of inner sunshine, hope and joy.",
     },
     u: {
         tree: "Heather",
         keyWord: "Joy",
-        description: "Heather is associated with joy, beauty, and admiration...",
-        history: "Heather was used in ancient rituals to attract love and to bring happiness and joy...",
+        name: "Ogham name: Ur (say \"oor\")",
+        poem: "With a joyful spring in your step, \nKnow that luck is on your side.",
+        about: "I am Heather, a hardy plant growing on moors and mountains. In summer, I turn the hillsides purple-pink. I buzz with the sound of bees and scent the breeze. I bring love to hard places. I grow like a miniature forest, tiny trees with woody trunks and waxy leaves which protect me from all weathers. Three of my kind grow together, Ling, Bell and Cross, food and home for caterpillars including the Emperor moth. I am wonderful to lie on, a plant to dream on, a springy bed on a sunny day. A heather cloak. A balm for the soul. Dance on the hills and be of light heart for I am a lucky plant who brings you good fortune and a joyful spring in your step.",
+        medicine: "Medicine from my flowers infused in oil can help chilblains, aches and pains in the joints. Tea from my flowers and leaves is calming and can help you sleep well. Honey made from my nectar is a powerful medicine to protect you from illness. Heather honey is a treasure of the medicine chest.",
     },
     e: {
         tree: "Aspen",
         keyWord: "Listening",
-        description: "Aspen trees are known for their trembling leaves and are associated with communication and listening...",
-        history: "The Aspen was considered a sacred tree of the Druids, who believed it could help one connect with the spirit world...",
+        name: "Ogham name: Eadhadh (say \"ay-ya\")",
+        poem: "Listen to the world for it always sings, \nTelling stories on the breath of the wind.",
+        about: "I am Aspen, of the Poplar family, the whispering tree. My leaves grow on long stalks which flutter strongly in the wind making a rusling sound which you may hear from some distance away. I am also known as the trembling or quaking aspen. My wood is a favorite food of beavers, while many others such as hare and deer love to eat my bark, buds and leaves. I can tell you about the weather and I share the music and stories of the wind, who travels all around the world. Be still, hear the world speaking to you. Close your eyes and listen. The wind loves to blow through my leaves, to touch your cheeks and play with your hair. Where is the wind blowing from today? What is the world saying? What stories do you hear and what stories would you like to share?",
+        medicine: "Medicine from my leaves and buds helps heal cuts, burns and grazes. My inner bark can help diarrhea. A tea of my leaves and bark helps to relieve pain and swellings. Sometimes, when you are worried or afraid, feelings can make you tremble inside. My flower essence remedy can help you to feel courage in your heart, to be still and to listen.",
     },
     i: {
         tree: "Yew",
         keyWord: "Ancestors",
-        description: "Yew trees are long-lived and are often associated with death and resurrection...",
-        history: "The Yew was considered a tree of the underworld and was often planted in graveyards to honor the ancestors...",
+        name: "Ogham name: Ioho (say \"ee-oh\")",
+        poem: "New beginnings lead to endings, \nEvery end, a new life tending.",
+        about: "I am the Yew, tree of the ancestors. In my dark evergreen boughs, many birds come to feed on my red berries known as 'arils'. My leaves are eaten by the Satin Beauty moth. I am the oldest tree in this land and one of the most ancient beings alive on Earth. Some of my trees are many thousands of years old. I have a special way of living where parts of my wood die while other parts continue to grow. Because I embrace death as I grow, I am able to span the ages. Whole civilizations rise and fall in the lifetime of one of my trees. I see th epassing of many generations. You belong to a great family tree, joined to those who have fone before you and the future generations. Remember your ancestors are with you. Remember to live well for those yet to come.",
+        medicine: "Medicine is made from my inner bark to treat certain cancers. It is very poisonous so the dose isvery tiny and must only by given by trained herbalists and doctors. Please take great care of your short and precious lives. Yew is deadly poisonous in every part, with the exception of the res flesh of the berry. However, due to the deadly seed, never forage this with children!",
     }
 };
 
@@ -194,12 +208,7 @@ export default function SymbolInfoPage() {
                 {details.medicine && (
                     <div style={{ fontWeight: 400, color: "var(--foreground)", fontSize: "0.9rem", marginBottom: "1rem", textAlign: "center" }}>{details.medicine}</div>
                 )}
-                {details.description && (
-                    <div style={{ fontWeight: 400, color: "var(--foreground)", fontSize: "0.9rem", marginBottom: "1rem", textAlign: "center" }}>{details.description}</div>
-                )}
-                {details.history && (
-                    <div style={{ fontWeight: 400, color: "var(--foreground)", fontSize: "0.9rem", marginBottom: "1rem", textAlign: "center" }}>{details.history}</div>
-                )}
+                
                     {/* Add more info here as needed */}
                     <div style={{ fontWeight: 300, color: "var(--muted)", fontSize: "0.8rem", marginTop: "1rem", textAlign: "center" }}>{published}</div>
             </div>
