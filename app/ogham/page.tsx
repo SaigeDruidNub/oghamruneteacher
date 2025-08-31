@@ -1,28 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 import { GameButtons } from "./GameButtons";
 import { OghamCards } from "./OghamCards";
 
-const oghamOrder = [
-	"b","l","f","s","n",
-    "h","d","t","c","q",
-    "m","g","ng","z","r",
-    "a","o","u","e","i"
-];
-
-const treeNames = [
-	"Birch", "Rowan", "Alder", "Willow", "Ash",
-	"Hawthorn", "Oak", "Holly", "Hazel", "Apple",
-	"Bramble", "Ivy", "Fern", "Blackthorn", "Elder",
-	"Pine", "Gorse", "Heather", "Aspen", "Yew"
-];
-
-const keyWords = [
-    "Adventure", "Bright Light", "Unity", "Vision", "Key",
-    "Heart", "Strength", "Protection", "Intuition", "Generosity",
-    "Harvest", "Flow", "Invisibility", "Challenge", "Wisdom",
-    "Spirit", "Hope", "Joy", "Listening", "Ancestors"
-]
+// ...existing code...
 
 export default function OghamLanding() {
 	return (
@@ -51,7 +31,9 @@ export default function OghamLanding() {
 					alignItems: "center",
 				}}
 			>
-				<a href="/" style={{ alignSelf: "flex-start", marginBottom: "1rem", color: "var(--primary)", textDecoration: "underline", fontWeight: 500, fontSize: "1rem" }}>&larr; Back to Home</a>
+				<Link href="/" passHref legacyBehavior>
+					<a style={{ alignSelf: "flex-start", marginBottom: "1rem", color: "var(--primary)", textDecoration: "underline", fontWeight: 500, fontSize: "1rem" }}>&larr; Back to Home</a>
+				</Link>
 				<h1
 					style={{
 						fontSize: "2.5rem",

@@ -1,5 +1,6 @@
 'use client'
 import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 
 
@@ -112,7 +113,10 @@ export default function KeyWordGame() {
     return (
         <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", background: "var(--background)", color: "var(--foreground)" }}>
             <div style={{ background: "var(--card)", color: "var(--card-foreground)", borderRadius: "1.5rem", boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)", padding: "2rem", maxWidth: "32rem", width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
-                <a href="/ogham" style={{ alignSelf: "flex-start", marginBottom: "0.5rem", color: "var(--primary)", fontWeight: 600, textDecoration: "underline", fontSize: "1rem" }}>&larr; Back to Ogham Main Page</a>
+                {/* Use Next.js Link for navigation */}
+                <Link href="/ogham" passHref legacyBehavior>
+                    <a style={{ alignSelf: "flex-start", marginBottom: "0.5rem", color: "var(--primary)", fontWeight: 600, textDecoration: "underline", fontSize: "1rem" }}>&larr; Back to Ogham Main Page</a>
+                </Link>
                 <h1 style={{ fontSize: "2rem", fontWeight: 800, marginBottom: "1rem", color: "var(--primary)", textAlign: "center" }}>Ogham Key Word Game</h1>
                 <p style={{ fontSize: "1.125rem", marginBottom: "1.5rem", textAlign: "center", color: "var(--foreground)", opacity: 0.85 }}>
                     Which key word matches this Ogham symbol?

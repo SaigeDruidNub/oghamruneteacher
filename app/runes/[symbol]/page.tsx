@@ -1,6 +1,7 @@
 "use client";
 import { useParams } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 
 const runeDetails = {
   F: {
@@ -173,7 +174,9 @@ export default function RuneInfoPage() {
   return (
     <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", background: "var(--background)", color: "var(--foreground)" }}>
       <div style={{ background: "var(--card)", color: "var(--card-foreground)", borderRadius: "1.5rem", boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)", padding: "2rem", maxWidth: "28rem", width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
-        <a href="/runes" style={{ alignSelf: "flex-start", marginBottom: "1rem", color: "var(--primary)", textDecoration: "underline", fontWeight: 500, fontSize: "1rem" }}>&larr; Back to Runes Landing Page</a>
+        <Link href="/runes" passHref legacyBehavior>
+          <a style={{ alignSelf: "flex-start", marginBottom: "1rem", color: "var(--primary)", textDecoration: "underline", fontWeight: 500, fontSize: "1rem" }}>&larr; Back to Runes Landing Page</a>
+        </Link>
         <h1 style={{ fontSize: "2rem", fontWeight: 800, marginBottom: "1rem", color: "var(--primary)", textAlign: "center" }}>{symbol}</h1>
         <Image src={details.image} alt={symbol} width={96} height={96} style={{ borderRadius: "0.5rem", boxShadow: "0 2px 8px 0 rgba(61, 176, 215, 0.15)", background: "var(--card)", opacity: 0.95, marginBottom: "1.5rem" }} />
         <div style={{ fontWeight: 600, color: "var(--primary)", fontSize: "1.1rem", marginBottom: "0.5rem" }}>Name: {details.name}</div>
@@ -181,10 +184,14 @@ export default function RuneInfoPage() {
         <div style={{ fontWeight: 400, color: "var(--foreground)", fontSize: "0.95rem", marginBottom: "1rem", textAlign: "center" }}>{details.description}</div>
         <div style={{ display: "flex", justifyContent: "space-between", width: "100%", marginTop: "1.5rem" }}>
           {prevSymbol ? (
-            <a href={`/runes/${prevSymbol}`} style={{ color: "var(--primary)", textDecoration: "none", fontWeight: 600, fontSize: "1.2rem" }}>&larr; {prevSymbol}</a>
+            <Link href={`/runes/${prevSymbol}`} passHref legacyBehavior>
+              <a style={{ color: "var(--primary)", textDecoration: "none", fontWeight: 600, fontSize: "1.2rem" }}>&larr; {prevSymbol}</a>
+            </Link>
           ) : <span />}
           {nextSymbol ? (
-            <a href={`/runes/${nextSymbol}`} style={{ color: "var(--primary)", textDecoration: "none", fontWeight: 600, fontSize: "1.2rem" }}>{nextSymbol} &rarr;</a>
+            <Link href={`/runes/${nextSymbol}`} passHref legacyBehavior>
+              <a style={{ color: "var(--primary)", textDecoration: "none", fontWeight: 600, fontSize: "1.2rem" }}>{nextSymbol} &rarr;</a>
+            </Link>
           ) : <span />}
         </div>
         {/* Add more info here as needed */}

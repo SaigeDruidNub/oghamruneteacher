@@ -1,5 +1,6 @@
 
 import Image from "next/image";
+import Link from "next/link";
 
 const runes = [
   { letter: "F", name: "Fehu", keyword: "Wealth" },
@@ -55,7 +56,9 @@ export default function RunesLanding() {
           alignItems: "center",
         }}
       >
-        <a href="/" style={{ alignSelf: "flex-start", marginBottom: "1rem", color: "var(--primary)", textDecoration: "underline", fontWeight: 500, fontSize: "1rem" }}>&larr; Back to Home</a>
+        <Link href="/" passHref legacyBehavior>
+          <a style={{ alignSelf: "flex-start", marginBottom: "1rem", color: "var(--primary)", textDecoration: "underline", fontWeight: 500, fontSize: "1rem" }}>&larr; Back to Home</a>
+        </Link>
         <h1
           style={{
             fontSize: "2.5rem",
@@ -79,57 +82,60 @@ export default function RunesLanding() {
           Explore all Elder Futhark runes below:
         </p>
         <div style={{ display: "flex", gap: "1rem", marginTop: "0.5rem" }}>
-          <a
-            href="/runes/nameGame"
-            style={{
-              padding: "0.75rem 1.5rem",
-              background: "var(--primary)",
-              color: "#fff",
-              borderRadius: "0.75rem",
-              fontWeight: 600,
-              fontSize: "1.1rem",
-              textDecoration: "none",
-              boxShadow: "0 2px 8px 0 rgba(61, 176, 215, 0.10)",
-              transition: "background 0.2s, box-shadow 0.2s",
-              display: "inline-block"
-            }}
-          >
-            Name Game
-          </a>
-          <a
-            href="/runes/letterGame"
-            style={{
-              padding: "0.75rem 1.5rem",
-              background: "var(--primary)",
-              color: "#fff",
-              borderRadius: "0.75rem",
-              fontWeight: 600,
-              fontSize: "1.1rem",
-              textDecoration: "none",
-              boxShadow: "0 2px 8px 0 rgba(61, 176, 215, 0.10)",
-              transition: "background 0.2s, box-shadow 0.2s",
-              display: "inline-block"
-            }}
-          >
-            Letter Game
-          </a>
-          <a
-            href="/runes/keywordGame"
-            style={{
-              padding: "0.75rem 1.5rem",
-              background: "var(--primary)",
-              color: "#fff",
-              borderRadius: "0.75rem",
-              fontWeight: 600,
-              fontSize: "1.1rem",
-              textDecoration: "none",
-              boxShadow: "0 2px 8px 0 rgba(61, 176, 215, 0.10)",
-              transition: "background 0.2s, box-shadow 0.2s",
-              display: "inline-block"
-            }}
-          >
-            Keyword Game
-          </a>
+          <Link href="/runes/nameGame" passHref legacyBehavior>
+            <a
+              style={{
+                padding: "0.75rem 1.5rem",
+                background: "var(--primary)",
+                color: "#fff",
+                borderRadius: "0.75rem",
+                fontWeight: 600,
+                fontSize: "1.1rem",
+                textDecoration: "none",
+                boxShadow: "0 2px 8px 0 rgba(61, 176, 215, 0.10)",
+                transition: "background 0.2s, box-shadow 0.2s",
+                display: "inline-block"
+              }}
+            >
+              Name Game
+            </a>
+          </Link>
+          <Link href="/runes/letterGame" passHref legacyBehavior>
+            <a
+              style={{
+                padding: "0.75rem 1.5rem",
+                background: "var(--primary)",
+                color: "#fff",
+                borderRadius: "0.75rem",
+                fontWeight: 600,
+                fontSize: "1.1rem",
+                textDecoration: "none",
+                boxShadow: "0 2px 8px 0 rgba(61, 176, 215, 0.10)",
+                transition: "background 0.2s, box-shadow 0.2s",
+                display: "inline-block"
+              }}
+            >
+              Letter Game
+            </a>
+          </Link>
+          <Link href="/runes/keywordGame" passHref legacyBehavior>
+            <a
+              style={{
+                padding: "0.75rem 1.5rem",
+                background: "var(--primary)",
+                color: "#fff",
+                borderRadius: "0.75rem",
+                fontWeight: 600,
+                fontSize: "1.1rem",
+                textDecoration: "none",
+                boxShadow: "0 2px 8px 0 rgba(61, 176, 215, 0.10)",
+                transition: "background 0.2s, box-shadow 0.2s",
+                display: "inline-block"
+              }}
+            >
+              Keyword Game
+            </a>
+          </Link>
         </div>
       </div>
       <div
@@ -143,37 +149,42 @@ export default function RunesLanding() {
         }}
       >
         {runes.map((rune) => (
-            <a
+            <Link
               key={rune.letter}
               href={`/runes/${encodeURIComponent(rune.letter)}`}
-              style={{
-                textDecoration: "none",
-                color: "inherit",
-              }}
+              passHref
+              legacyBehavior
             >
-              <div
+              <a
                 style={{
-                  background: "var(--card)",
-                  border: "2px solid var(--primary)",
-                  borderRadius: "1rem",
-                  boxShadow: "0 2px 8px 0 rgba(61, 176, 215, 0.10)",
-                  padding: "1rem 1.25rem",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "stretch",
-                  minWidth: "16rem",
-                  transition: "box-shadow 0.2s, border 0.2s",
-                  cursor: "pointer",
+                  textDecoration: "none",
+                  color: "inherit",
                 }}
               >
-                <div style={{ display: "flex", alignItems: "center", gap: "1.5rem", justifyContent: "flex-start" }}>
-                  <span style={{ minWidth: "2rem", color: "var(--primary)", fontWeight: 600, fontSize: "1.1rem", textAlign: "right" }}>{rune.letter}</span>
-                  <Image src={`/${rune.letter} - ${rune.name}.png`} alt={rune.letter} width={64} height={64} style={{ borderRadius: "0.5rem", boxShadow: "0 2px 8px 0 rgba(61, 176, 215, 0.15)", background: "var(--card)" }} />
-                  <span style={{ minWidth: "5rem", color: "var(--primary)", fontWeight: 500, fontSize: "1rem", textAlign: "left" }}>{rune.name}</span>
+                <div
+                  style={{
+                    background: "var(--card)",
+                    border: "2px solid var(--primary)",
+                    borderRadius: "1rem",
+                    boxShadow: "0 2px 8px 0 rgba(61, 176, 215, 0.10)",
+                    padding: "1rem 1.25rem",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "stretch",
+                    minWidth: "16rem",
+                    transition: "box-shadow 0.2s, border 0.2s",
+                    cursor: "pointer",
+                  }}
+                >
+                  <div style={{ display: "flex", alignItems: "center", gap: "1.5rem", justifyContent: "flex-start" }}>
+                    <span style={{ minWidth: "2rem", color: "var(--primary)", fontWeight: 600, fontSize: "1.1rem", textAlign: "right" }}>{rune.letter}</span>
+                    <Image src={`/${rune.letter} - ${rune.name}.png`} alt={rune.letter} width={64} height={64} style={{ borderRadius: "0.5rem", boxShadow: "0 2px 8px 0 rgba(61, 176, 215, 0.15)", background: "var(--card)" }} />
+                    <span style={{ minWidth: "5rem", color: "var(--primary)", fontWeight: 500, fontSize: "1rem", textAlign: "left" }}>{rune.name}</span>
+                  </div>
+                  <span style={{ color: "var(--foreground)", fontWeight: 500, fontSize: "0.95rem", marginTop: "0.25rem", textAlign: "center", display: "block", width: "100%" }}>{rune.keyword}</span>
                 </div>
-                <span style={{ color: "var(--foreground)", fontWeight: 500, fontSize: "0.95rem", marginTop: "0.25rem", textAlign: "center", display: "block", width: "100%" }}>{rune.keyword}</span>
-              </div>
-            </a>
+              </a>
+            </Link>
         ))}
       </div>
     </main>

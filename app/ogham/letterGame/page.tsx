@@ -1,5 +1,7 @@
 'use client';
 import React, { useState } from 'react';
+import Link from "next/link";
+import Image from "next/image";
 
 
 // Ogham letters, images, tree names, and key words
@@ -96,7 +98,9 @@ export default function LetterGame() {
   return (
     <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", background: "var(--background)", color: "var(--foreground)" }}>
       <div style={{ background: "var(--card)", color: "var(--card-foreground)", borderRadius: "1.5rem", boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)", padding: "2rem", maxWidth: "32rem", width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
-        <a href="/ogham" style={{ alignSelf: "flex-start", marginBottom: "0.5rem", color: "var(--primary)", fontWeight: 600, textDecoration: "underline", fontSize: "1rem" }}>&larr; Back to Ogham Main Page</a>
+        <Link href="/ogham" passHref legacyBehavior>
+          <a style={{ alignSelf: "flex-start", marginBottom: "0.5rem", color: "var(--primary)", fontWeight: 600, textDecoration: "underline", fontSize: "1rem" }}>&larr; Back to Ogham Main Page</a>
+        </Link>
         <h1 style={{ fontSize: "2rem", fontWeight: 800, marginBottom: "1rem", color: "var(--primary)", textAlign: "center" }}>Ogham Letter Game</h1>
         <p style={{ fontSize: "1.125rem", marginBottom: "1.5rem", textAlign: "center", color: "var(--foreground)", opacity: 0.85 }}>
           Which letter matches this Ogham symbol?
@@ -105,7 +109,7 @@ export default function LetterGame() {
           Score: {score} / {current}
         </div>
         <div style={{ display: "flex", alignItems: "center", marginBottom: "1.5rem", gap: "1.25rem" }}>
-          <img src={symbol.img} alt={symbol.letter} width={96} height={96} style={{ borderRadius: "0.5rem", boxShadow: "0 2px 8px 0 rgba(61, 176, 215, 0.15)", background: "var(--card)", opacity: 0.95 }} />
+          <Image src={symbol.img} alt={symbol.letter} width={96} height={96} style={{ borderRadius: "0.5rem", boxShadow: "0 2px 8px 0 rgba(61, 176, 215, 0.15)", background: "var(--card)", opacity: 0.95 }} />
           {showAnswer && (
             <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
               <span style={{ fontWeight: 700, color: "var(--primary)", fontSize: "1.5rem", marginBottom: "0.25rem" }}>{symbol.letter}</span>
