@@ -35,7 +35,7 @@ const runeDetails = {
   R: {
     name: "Raido",
     keyword: "Journey",
-    pronunciation: "RYE-do",
+    pronunciation: "RYE-tho",
     description: "Raido is the rune of journeys, travel, and movement. It signifies progress and life paths.",
     image: "/R - Raido.png"
   },
@@ -84,14 +84,14 @@ const runeDetails = {
   J: {
     name: "Jera",
     keyword: "Harvest",
-    pronunciation: "YEH-rah",
+    pronunciation: "YEHR-ah",
     description: "Jera is the rune of harvest, cycles, and reward. It represents growth and fruition.",
     image: "/J - Jera.png"
   },
   AE: {
     name: "Eihwaz",
     keyword: "Defense",
-    pronunciation: "AY-wahz",
+    pronunciation: "EYE-wahz",
     description: "Eihwaz stands for defense, protection, and resilience. It is the rune of endurance and stability.",
     image: "/AE - Eihwaz.png"
   },
@@ -133,7 +133,7 @@ const runeDetails = {
   E: {
     name: "Ehwaz",
     keyword: "Movement",
-    pronunciation: "EH-wahz",
+    pronunciation: "AY-wahz",
     description: "Ehwaz symbolizes movement, progress, and trust. It is the rune of teamwork and change.",
     image: "/E - Ehwaz.png"
   },
