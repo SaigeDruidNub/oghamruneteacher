@@ -14,7 +14,19 @@ export default function Home() {
 				color: "var(--foreground)",
 			}}
 		>
+			<style>{`
+				@media (max-width: 700px) {
+					.home-flex-row {
+						flex-direction: column !important;
+						gap: 0 !important;
+					}
+					.hide-on-mobile {
+						display: none !important;
+					}
+				}
+			`}</style>
 			<div
+				className="home-flex-row"
 				style={{
 					display: "flex",
 					flexDirection: "row",
@@ -23,7 +35,7 @@ export default function Home() {
 				}}
 			>
 				{/* Ogham images in 4 columns of 5 */}
-				<div
+				<div className="hide-on-mobile"
 					style={{
 						display: "grid",
 						gridTemplateColumns: "repeat(4, 1fr)",
@@ -107,7 +119,7 @@ export default function Home() {
 				</div>
 
 				{/* Rune images in 4 columns of 6 */}
-				<div
+				<div className="hide-on-mobile"
 					style={{
 						display: "grid",
 						gridTemplateColumns: "repeat(4, 1fr)",

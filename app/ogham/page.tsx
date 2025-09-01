@@ -17,7 +17,26 @@ export default function OghamLanding() {
 				color: "var(--foreground)",
 			}}
 		>
+			<style>{`
+				@media (max-width: 700px) {
+					.ogham-card {
+						padding: 1rem !important;
+						max-width: 100vw !important;
+						border-radius: 1rem !important;
+					}
+					.ogham-card h1 {
+						font-size: 1.5rem !important;
+					}
+					.ogham-card p {
+						font-size: 1rem !important;
+					}
+					.ogham-card a {
+						font-size: 0.95rem !important;
+					}
+				}
+			`}</style>
 			<div
+				className="ogham-card"
 				style={{
 					background: "var(--card)",
 					color: "var(--card-foreground)",
