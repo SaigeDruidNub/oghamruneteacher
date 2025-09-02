@@ -33,6 +33,18 @@ export default function OghamLanding() {
 					.ogham-card a {
 						font-size: 0.95rem !important;
 					}
+					.ogham-cards-container {
+						display: flex !important;
+						flex-direction: column !important;
+						align-items: center !important;
+						gap: 0.75rem !important;
+					}
+					.ogham-cards-container .ogham-symbol-card {
+						width: 90vw !important;
+						max-width: 350px !important;
+						min-width: 0 !important;
+						margin: 0 auto !important;
+					}
 				}
 			`}</style>
 			<div
@@ -77,7 +89,9 @@ export default function OghamLanding() {
 				</p>
 				<GameButtons />
 			</div>
-			<OghamCards />
+			<div className="ogham-cards-container">
+				<OghamCards />
+			</div>
 		</main>
 	);
 }

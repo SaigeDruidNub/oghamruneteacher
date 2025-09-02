@@ -58,138 +58,108 @@ function getOptions(correctIdx: number): string[] {
     return options;
 }
 
-export default function KeyWordGame() {
-    // Create a shuffled array of indices for the session
-    const [order, setOrder] = useState<number[]>(() => {
-        const arr = Array.from({ length: oghamOrder.length }, (_, i) => i);
-        for (let i = arr.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [arr[i], arr[j]] = [arr[j], arr[i]];
-        }
-        return arr;
-    });
-    const [current, setCurrent] = useState(0);
-    const [showAnswer, setShowAnswer] = useState(false);
-    const [selected, setSelected] = useState<string | null>(null);
-    const [options, setOptions] = useState(() => getOptions(order[0]));
-    const [correctCount, setCorrectCount] = useState(0);
 
-    const correctIdx = order[current];
-    const correct = keyWords[correctIdx];
-    const symbol = oghamOrder[correctIdx];
-    const details = oghamDetails[correctIdx];
+export default function OghamKeyWordGame() {
+    const [remaining, setRemaining] = useState([...Array(oghamOrder.length).keys()]);
+    const [currentIdx, setCurrentIdx] = useState(remaining[Math.floor(Math.random() * remaining.length)]);
+    const [options, setOptions] = useState(getOptions(currentIdx));
+    const [selected, setSelected] = useState<string | null>(null);
+    const [result, setResult] = useState<string | null>(null);
+    const [score, setScore] = useState(0);
+    const [completed, setCompleted] = useState(false);
+
+    function nextSymbol() {
+        const newRemaining = remaining.filter(i => i !== currentIdx);
+        if (newRemaining.length === 0) {
+            setCompleted(true);
+            return;
+        }
+        const next = newRemaining[Math.floor(Math.random() * newRemaining.length)];
+        setRemaining(newRemaining);
+        setCurrentIdx(next);
+        setOptions(getOptions(next));
+        setSelected(null);
+        setResult(null);
+    }
 
     function handleSelect(option: string) {
         setSelected(option);
-        setShowAnswer(true);
-        if (option === correct) {
-            setCorrectCount((prev) => prev + 1);
+        if (option === keyWords[currentIdx]) {
+            setResult("Correct!");
+            setScore(s => s + 1);
+        } else {
+            setResult(`Try again. The correct answer is: ${keyWords[currentIdx]}`);
         }
     }
 
-    function handleNext() {
-        const next = current + 1;
-        if (next < oghamOrder.length) {
-            setCurrent(next);
-            setShowAnswer(false);
-            setSelected(null);
-            setOptions(getOptions(order[next]));
-        } else {
-            // Reshuffle for a new session
-            const arr = Array.from({ length: oghamOrder.length }, (_, i) => i);
-            for (let i = arr.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [arr[i], arr[j]] = [arr[j], arr[i]];
-            }
-            setOrder(arr);
-            setCurrent(0);
-            setShowAnswer(false);
-            setSelected(null);
-            setOptions(getOptions(arr[0]));
-            setCorrectCount(0);
-        }
+    function restartGame() {
+        setRemaining([...Array(oghamOrder.length).keys()]);
+        const next = Math.floor(Math.random() * oghamOrder.length);
+        setCurrentIdx(next);
+        setOptions(getOptions(next));
+        setSelected(null);
+        setResult(null);
+        setScore(0);
+        setCompleted(false);
     }
+
+    const symbol = oghamOrder[currentIdx];
+    const details = oghamDetails[currentIdx];
 
     return (
-        <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", background: "var(--background)", color: "var(--foreground)" }}>
-            <div style={{ background: "var(--card)", color: "var(--card-foreground)", borderRadius: "1.5rem", boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)", padding: "2rem", maxWidth: "32rem", width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
-                {/* Use Next.js Link for navigation */}
-                <Link href="/ogham" passHref legacyBehavior>
-                    <a style={{ alignSelf: "flex-start", marginBottom: "0.5rem", color: "var(--primary)", fontWeight: 600, textDecoration: "underline", fontSize: "1rem" }}>&larr; Back to Ogham Main Page</a>
-                </Link>
-                <h1 style={{ fontSize: "2rem", fontWeight: 800, marginBottom: "1rem", color: "var(--primary)", textAlign: "center" }}>Ogham Key Word Game</h1>
-                <p style={{ fontSize: "1.125rem", marginBottom: "1.5rem", textAlign: "center", color: "var(--foreground)", opacity: 0.85 }}>
-                    Which key word matches this Ogham symbol?
-                </p>
-                <div style={{ marginBottom: "1rem", fontWeight: 600, color: "var(--primary)", fontSize: "1.1rem" }}>
-                    Correct answers: {correctCount} / {current}
-                </div>
-                <div style={{ display: "flex", alignItems: "center", marginBottom: "1.5rem", gap: "1.25rem" }}>
-                    <Image src={`/${symbol}.png`} alt={symbol} width={96} height={96} style={{ borderRadius: "0.5rem", boxShadow: "0 2px 8px 0 rgba(61, 176, 215, 0.15)", background: "var(--card)", opacity: 0.95 }} />
-                    {showAnswer && (
-                        <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
-                            <span style={{ fontWeight: 700, color: "var(--primary)", fontSize: "1.5rem", marginBottom: "0.25rem" }}>{details.letter}</span>
-                            <span style={{ color: "var(--foreground)", fontWeight: 500, fontSize: "1.1rem" }}>{details.tree}</span>
-                        </div>
-                    )}
-                </div>
-                <div style={{ display: "flex", flexDirection: "column", gap: "1rem", width: "100%" }}>
-                    {options.map((option) => (
-                        <button
-                            key={option}
-                            onClick={() => !showAnswer && handleSelect(option)}
-                            style={{
-                                padding: "0.75rem 1.5rem",
-                                borderRadius: "1rem",
-                                fontWeight: 700,
-                                fontSize: "1rem",
-                                background: showAnswer
-                                    ? option === correct
-                                        ? "var(--primary)"
-                                        : option === selected
-                                            ? "#e57373"
-                                            : "var(--card)"
-                                    : "var(--card)",
-                                color: showAnswer
-                                    ? option === correct
-                                        ? "var(--card)"
-                                        : option === selected
-                                            ? "var(--card)"
-                                            : "var(--primary)"
-                                    : "var(--primary)",
-                                border: "none",
-                                boxShadow: "0 2px 8px 0 rgba(61, 176, 215, 0.15)",
-                                cursor: showAnswer ? "default" : "pointer",
-                                opacity: showAnswer && option !== correct && option !== selected ? 0.7 : 1,
-                                transition: "background 0.2s, color 0.2s",
-                            }}
-                            disabled={showAnswer}
-                        >
-                            {option}
-                        </button>
-                    ))}
-                </div>
-                {showAnswer && (
-                    <div style={{ marginTop: "1.5rem", textAlign: "center" }}>
-                        {selected === correct ? (
-                            <span style={{ color: "var(--primary)", fontWeight: 700, fontSize: "1.1rem" }}>Correct!</span>
-                        ) : (
-                            <span style={{ color: "#e57373", fontWeight: 700, fontSize: "1.1rem" }}>
-                                Incorrect. The correct answer is <span style={{ color: "var(--primary)" }}>{correct}</span>.
-                            </span>
-                        )}
-                        <div style={{ marginTop: "1rem", fontSize: "1.05rem", color: "var(--foreground)", background: "var(--card)", borderRadius: "1rem", padding: "1rem", display: "inline-block" }}>
-                            <Image src={`/${symbol}.png`} alt={symbol} width={64} height={64} style={{ verticalAlign: "middle", marginRight: "1rem", borderRadius: "0.5rem", background: "var(--card)", boxShadow: "0 2px 8px 0 rgba(61, 176, 215, 0.10)" }} />
-                            <span style={{ fontWeight: 700, color: "var(--primary)", fontSize: "1.1rem" }}>{details.letter}</span>
-                            <span style={{ marginLeft: "0.75rem", color: "var(--foreground)", fontWeight: 500 }}>{details.tree}</span>
-                        </div>
-                        <br />
-                        <button onClick={handleNext} style={{ marginTop: "1rem", padding: "0.75rem 1.5rem", borderRadius: "1rem", fontWeight: 700, background: "var(--primary)", color: "var(--card)", border: "none", boxShadow: "0 2px 8px 0 rgba(61, 176, 215, 0.15)", cursor: "pointer" }}>
-                            Next Symbol
-                        </button>
+        <div style={{
+            background: "var(--card)",
+            borderRadius: "1.5rem",
+            boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.18)",
+            padding: "2rem",
+            maxWidth: "28rem",
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            margin: "2rem auto"
+        }}>
+            <Link href="/ogham" passHref legacyBehavior>
+                <a style={{ alignSelf: "flex-start", marginBottom: "0.5rem", color: "var(--primary)", fontWeight: 600, textDecoration: "underline", fontSize: "1rem" }}>&larr; Back to Ogham Main Page</a>
+            </Link>
+            <h2 style={{ color: "var(--primary)", fontWeight: 700, fontSize: "2rem", marginBottom: "1rem" }}>Ogham Key Word Game</h2>
+            <div style={{ fontWeight: 600, fontSize: "1.1rem", marginBottom: "1rem", color: "var(--primary)" }}>Score: {score} / {oghamOrder.length}</div>
+            {!completed ? (
+                <>
+                    <Image src={`/${symbol}.png`} alt={symbol} width={96} height={96} style={{ marginBottom: "1.5rem", borderRadius: "0.5rem", background: "var(--card)" }} />
+                    <div style={{ display: "flex", flexDirection: "column", gap: "1rem", width: "100%" }}>
+                        {options.map(option => (
+                            <button
+                                key={option}
+                                onClick={() => handleSelect(option)}
+                                disabled={!!selected}
+                                style={{
+                                    padding: "0.75rem 1rem",
+                                    borderRadius: "0.75rem",
+                                    border: selected === option ? "2px solid var(--primary)" : "2px solid var(--border)",
+                                    background: selected === option ? "var(--primary)" : "var(--background)",
+                                    color: selected === option ? "#fff" : "var(--foreground)",
+                                    fontWeight: 600,
+                                    fontSize: "1.1rem",
+                                    cursor: selected ? "default" : "pointer",
+                                    transition: "all 0.2s"
+                                }}
+                            >
+                                {option}
+                            </button>
+                        ))}
                     </div>
-                )}
-            </div>
-        </main>
+                    {result && <div style={{ marginTop: "1.5rem", fontWeight: 600, fontSize: "1.2rem", color: result === "Correct!" ? "var(--primary)" : "var(--danger)" }}>{result}</div>}
+                    {selected && <button onClick={nextSymbol} style={{ marginTop: "1.5rem", padding: "0.5rem 1.25rem", borderRadius: "0.75rem", border: "none", background: "var(--primary)", color: "#fff", fontWeight: 600, fontSize: "1rem", cursor: "pointer" }}>Next</button>}
+                </>
+            ) : (
+                <>
+                    <div style={{ margin: "2rem 0", fontWeight: 700, fontSize: "1.3rem", color: "var(--primary)", textAlign: "center" }}>
+                        Game complete!<br />Your score: {score} / {oghamOrder.length}
+                    </div>
+                    <button onClick={restartGame} style={{ padding: "0.75rem 1.5rem", borderRadius: "0.75rem", border: "none", background: "var(--primary)", color: "#fff", fontWeight: 600, fontSize: "1.1rem", cursor: "pointer" }}>Restart</button>
+                </>
+            )}
+        </div>
     );
 }

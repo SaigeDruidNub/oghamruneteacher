@@ -42,6 +42,25 @@ export default function RunesLanding() {
         color: "var(--foreground)",
       }}
     >
+      <style>{`
+        @media (max-width: 700px) {
+          .rune-cards-root {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            gap: 0.75rem !important;
+            max-width: 100vw !important;
+            margin-top: 1.5rem !important;
+          }
+          .rune-symbol-card {
+            min-width: 0 !important;
+            width: 90vw !important;
+            max-width: 350px !important;
+            margin: 0 auto !important;
+            padding: 0.5rem 0.75rem !important;
+          }
+        }
+      `}</style>
       <div
         style={{
           background: "var(--card)",
@@ -138,7 +157,7 @@ export default function RunesLanding() {
           </Link>
         </div>
       </div>
-      <div
+      <div className="rune-cards-root"
         style={{
           marginTop: "2.5rem",
           display: "grid",
@@ -156,6 +175,7 @@ export default function RunesLanding() {
               legacyBehavior
             >
               <a
+                className="rune-symbol-card"
                 style={{
                   textDecoration: "none",
                   color: "inherit",
