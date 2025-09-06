@@ -88,7 +88,7 @@ export default function RuneKeywordGame() {
       setResult("Correct!");
       setScore((s) => s + 1);
     } else {
-      setResult(`Try again. The correct answer is: ${currentRune.keyword}`);
+      setResult(`The correct answer is: ${currentRune.keyword}`);
     }
   }
 
