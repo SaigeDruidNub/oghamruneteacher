@@ -219,6 +219,7 @@ export default function RunesLanding() {
                   flexDirection: "column",
                   alignItems: "stretch",
                   minWidth: "16rem",
+                  minHeight: "8.5rem", // Ensures all cards are the same height
                   transition: "box-shadow 0.2s, border 0.2s",
                   cursor: "pointer",
                 }}
@@ -272,8 +273,12 @@ export default function RunesLanding() {
                     fontSize: "0.95rem",
                     marginTop: "0.25rem",
                     textAlign: "center",
-                    display: "block",
+                    display: "-webkit-box",
                     width: "100%",
+                    WebkitLineClamp: 2,
+                    WebkitBoxOrient: "vertical",
+                    overflow: "hidden",
+                    whiteSpace: "normal",
                   }}
                 >
                   {rune.keyword}
