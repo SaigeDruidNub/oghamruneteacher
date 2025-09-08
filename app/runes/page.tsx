@@ -1,32 +1,47 @@
-
 import Image from "next/image";
 import Link from "next/link";
 
 const runes = [
-  { letter: "F", name: "Fehu", keyword: "Wealth" },
-  { letter: "U", name: "Uruz", keyword: "Strength" },
-  { letter: "TH", name: "Thurisaz", keyword: "Gateway" },
-  { letter: "A", name: "Ansuz", keyword: "Signals" },
-  { letter: "R", name: "Raido", keyword: "Journey" },
-  { letter: "K", name: "Kaunan", keyword: "Fire" },
-  { letter: "G", name: "Gebo", keyword: "Gift" },
-  { letter: "W", name: "Wunjo", keyword: "Joy" },
-  { letter: "H", name: "Hagaiaz", keyword: "Disruption" },
-  { letter: "N", name: "Naughiz", keyword: "Constraint" },
-  { letter: "I", name: "Isaz", keyword: "Ice" },
-  { letter: "J", name: "Jera", keyword: "Harvest" },
-  { letter: "AE", name: "Eihwaz", keyword: "Defense" },
-  { letter: "P", name: "Perthro", keyword: "Mystery" },
-  { letter: "Z", name: "Algiz", keyword: "Protection" },
-  { letter: "S", name: "Sowilo", keyword: "Sun" },
-  { letter: "T", name: "Tiwaz", keyword: "Warrior" },
-  { letter: "B", name: "Berkanan", keyword: "Growth" },
-  { letter: "E", name: "Ehwaz", keyword: "Movement" },
-  { letter: "M", name: "Mannaz", keyword: "Self" },
-  { letter: "L", name: "Laguz", keyword: "Flow" },
-  { letter: "NG", name: "Ingwaz", keyword: "Fertility" },
-  { letter: "O", name: "Othalan", keyword: "Inheritance" },
-  { letter: "D", name: "Dagaz", keyword: "Breakthrough" }
+  { letter: "F", name: "Fehu", keyword: "Wealth, Investment, Abundance" },
+  { letter: "U", name: "Uruz", keyword: "Strength, Determination, Potential" },
+  {
+    letter: "TH",
+    name: "Thurisaz",
+    keyword: "Defense, Protection, Challenges",
+  },
+  { letter: "A", name: "Ansuz", keyword: "Communication, Insight, Wisdom" },
+  { letter: "R", name: "Raido", keyword: "Journey, Travel, Movement" },
+  {
+    letter: "K",
+    name: "Kaunan",
+    keyword: "Vision, Enlightenment, Clear Seeing",
+  },
+  { letter: "G", name: "Gebo", keyword: "Gift, Exchange, Balance" },
+  { letter: "W", name: "Wunjo", keyword: "Joy, Comfort, Pleasure" },
+  { letter: "H", name: "Hagaiaz", keyword: "Chaos, Uncontrolled Forces" },
+  { letter: "N", name: "Naughiz", keyword: "Constraint, Pain, Survival" },
+  { letter: "I", name: "Isaz", keyword: "Ice, Delays, Inaction" },
+  { letter: "J", name: "Jera", keyword: "Harvest, Celebration, Prosperity" },
+  { letter: "AE", name: "Eihwaz", keyword: "Defense, Transformation, Renewal" },
+  { letter: "P", name: "Perthro", keyword: "Mystery, Chance, Uncertainty" },
+  { letter: "Z", name: "Algiz", keyword: "Protection, Defence, Guardian" },
+  { letter: "S", name: "Sowilo", keyword: "Sun, Happiness, Celebration" },
+  { letter: "T", name: "Tiwaz", keyword: "Warrior, Leadership, Action" },
+  { letter: "B", name: "Berkanan", keyword: "Growth, Fertility, Empathy" },
+  { letter: "E", name: "Ehwaz", keyword: "Progression, Teamwork, Change" },
+  { letter: "M", name: "Mannaz", keyword: "Self, Development, Soul Searching" },
+  { letter: "L", name: "Laguz", keyword: "Flow, Water, Dreams" },
+  {
+    letter: "NG",
+    name: "Ingwaz",
+    keyword: "Fertility, Potential, Inner Growth",
+  },
+  {
+    letter: "O",
+    name: "Othalan",
+    keyword: "Inheritance, Tradition, Family Values",
+  },
+  { letter: "D", name: "Dagaz", keyword: "Breakthrough, Clarity, Truth" },
 ];
 
 export default function RunesLanding() {
@@ -76,7 +91,18 @@ export default function RunesLanding() {
         }}
       >
         <Link href="/" passHref legacyBehavior>
-          <a style={{ alignSelf: "flex-start", marginBottom: "1rem", color: "var(--primary)", textDecoration: "underline", fontWeight: 500, fontSize: "1rem" }}>&larr; Back to Home</a>
+          <a
+            style={{
+              alignSelf: "flex-start",
+              marginBottom: "1rem",
+              color: "var(--primary)",
+              textDecoration: "underline",
+              fontWeight: 500,
+              fontSize: "1rem",
+            }}
+          >
+            &larr; Back to Home
+          </a>
         </Link>
         <h1
           style={{
@@ -113,7 +139,7 @@ export default function RunesLanding() {
                 textDecoration: "none",
                 boxShadow: "0 2px 8px 0 rgba(61, 176, 215, 0.10)",
                 transition: "background 0.2s, box-shadow 0.2s",
-                display: "inline-block"
+                display: "inline-block",
               }}
             >
               Name Game
@@ -131,7 +157,7 @@ export default function RunesLanding() {
                 textDecoration: "none",
                 boxShadow: "0 2px 8px 0 rgba(61, 176, 215, 0.10)",
                 transition: "background 0.2s, box-shadow 0.2s",
-                display: "inline-block"
+                display: "inline-block",
               }}
             >
               Letter Game
@@ -149,7 +175,7 @@ export default function RunesLanding() {
                 textDecoration: "none",
                 boxShadow: "0 2px 8px 0 rgba(61, 176, 215, 0.10)",
                 transition: "background 0.2s, box-shadow 0.2s",
-                display: "inline-block"
+                display: "inline-block",
               }}
             >
               Keyword Game
@@ -157,7 +183,8 @@ export default function RunesLanding() {
           </Link>
         </div>
       </div>
-      <div className="rune-cards-root"
+      <div
+        className="rune-cards-root"
         style={{
           marginTop: "2.5rem",
           display: "grid",
@@ -168,43 +195,92 @@ export default function RunesLanding() {
         }}
       >
         {runes.map((rune) => (
-            <Link
-              key={rune.letter}
-              href={`/runes/${encodeURIComponent(rune.letter)}`}
-              passHref
-              legacyBehavior
+          <Link
+            key={rune.letter}
+            href={`/runes/${encodeURIComponent(rune.letter)}`}
+            passHref
+            legacyBehavior
+          >
+            <a
+              className="rune-symbol-card"
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+              }}
             >
-              <a
-                className="rune-symbol-card"
+              <div
                 style={{
-                  textDecoration: "none",
-                  color: "inherit",
+                  background: "var(--card)",
+                  border: "2px solid var(--primary)",
+                  borderRadius: "1rem",
+                  boxShadow: "0 2px 8px 0 rgba(61, 176, 215, 0.10)",
+                  padding: "1rem 1.25rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "stretch",
+                  minWidth: "16rem",
+                  transition: "box-shadow 0.2s, border 0.2s",
+                  cursor: "pointer",
                 }}
               >
                 <div
                   style={{
-                    background: "var(--card)",
-                    border: "2px solid var(--primary)",
-                    borderRadius: "1rem",
-                    boxShadow: "0 2px 8px 0 rgba(61, 176, 215, 0.10)",
-                    padding: "1rem 1.25rem",
                     display: "flex",
-                    flexDirection: "column",
-                    alignItems: "stretch",
-                    minWidth: "16rem",
-                    transition: "box-shadow 0.2s, border 0.2s",
-                    cursor: "pointer",
+                    alignItems: "center",
+                    gap: "1.5rem",
+                    justifyContent: "flex-start",
                   }}
                 >
-                  <div style={{ display: "flex", alignItems: "center", gap: "1.5rem", justifyContent: "flex-start" }}>
-                    <span style={{ minWidth: "2rem", color: "var(--primary)", fontWeight: 600, fontSize: "1.1rem", textAlign: "right" }}>{rune.letter}</span>
-                    <Image src={`/${rune.letter} - ${rune.name}.png`} alt={rune.letter} width={64} height={64} style={{ borderRadius: "0.5rem", boxShadow: "0 2px 8px 0 rgba(61, 176, 215, 0.15)", background: "var(--card)" }} />
-                    <span style={{ minWidth: "5rem", color: "var(--primary)", fontWeight: 500, fontSize: "1rem", textAlign: "left" }}>{rune.name}</span>
-                  </div>
-                  <span style={{ color: "var(--foreground)", fontWeight: 500, fontSize: "0.95rem", marginTop: "0.25rem", textAlign: "center", display: "block", width: "100%" }}>{rune.keyword}</span>
+                  <span
+                    style={{
+                      minWidth: "2rem",
+                      color: "var(--primary)",
+                      fontWeight: 600,
+                      fontSize: "1.1rem",
+                      textAlign: "right",
+                    }}
+                  >
+                    {rune.letter}
+                  </span>
+                  <Image
+                    src={`/${rune.letter} - ${rune.name}.png`}
+                    alt={rune.letter}
+                    width={64}
+                    height={64}
+                    style={{
+                      borderRadius: "0.5rem",
+                      boxShadow: "0 2px 8px 0 rgba(61, 176, 215, 0.15)",
+                      background: "var(--card)",
+                    }}
+                  />
+                  <span
+                    style={{
+                      minWidth: "5rem",
+                      color: "var(--primary)",
+                      fontWeight: 500,
+                      fontSize: "1rem",
+                      textAlign: "left",
+                    }}
+                  >
+                    {rune.name}
+                  </span>
                 </div>
-              </a>
-            </Link>
+                <span
+                  style={{
+                    color: "var(--foreground)",
+                    fontWeight: 500,
+                    fontSize: "0.95rem",
+                    marginTop: "0.25rem",
+                    textAlign: "center",
+                    display: "block",
+                    width: "100%",
+                  }}
+                >
+                  {rune.keyword}
+                </span>
+              </div>
+            </a>
+          </Link>
         ))}
       </div>
     </main>
