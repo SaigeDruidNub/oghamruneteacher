@@ -219,7 +219,7 @@ export default function RunesLanding() {
                   flexDirection: "column",
                   alignItems: "stretch",
                   minWidth: "16rem",
-                  minHeight: "8.5rem", // Ensures all cards are the same height
+                  minHeight: "9.5rem", // Ensures all cards are the same height
                   transition: "box-shadow 0.2s, border 0.2s",
                   cursor: "pointer",
                 }}
